@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+:root {
+  --c-txt--1: #666;
+  --c-txt--2: #e1001e;
+  --c-bg--1: white;
+  --c-bg--2: gainsboro;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', "游ゴシック体", YuGothic,  "游ゴシック", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", "メイリオ", Meiryo, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+/* タブレット */
+@media print, screen and (min-width: 520px) {
+  body {
+    font-size: 1.8rem;
+  }
+}
+/* パソコン */
+@media print, screen and (min-width: 1025px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-moz-selection {
+  color: var(--c-bg--1);
+  background-color: var(--c-txt--2);
+}
+::selection {
+  color: var(--c-bg--1);
+  background-color: var(--c-txt--2);
+}
+
+input:focus-visible {
+  outline: none;
+}
+input:-webkit-autofill, input:focus:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0 100px white inset;
+}
+
+
+/* common */
+.ttl--1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: inherit;
+  font-size: 3rem;
+  margin: 0;
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+.ttl--2 {
+  font-weight: inherit;
+  font-size: inherit;
+  margin: 1rem 0;
+}
+
+@media print, screen and (orientation: landscape), (min-width: 520px) {
+  .ttl--1 {
+    font-size: 5rem;
+  }
+}
+
+/* index.html */

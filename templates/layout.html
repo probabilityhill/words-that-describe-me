@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="ja" dir="ltr" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <!-- 共通：theme-color, og:image, site_name, og:image, og:image:alt -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="format-detection" content="email=no,telephone=no,address=no">
+  <meta name="theme-color" content="black">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/sanitize.css">
+
+  <link rel="icon" href="../static/img/common/favicon.ico">
+  <link rel="apple-touch-icon" href="../static/img/common/apple-touch-icon.png">
+  <meta name="msapplication-TileImage" content="../static/common/img/logo.png">
+  <meta name="msapplication-TileColor" content="black">
+
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:site_name" content="「私を構成する100の要素」作成ツール">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="{{url}}static/img/common/logo.jpg">
+  <meta property="og:image:alt" content="「私を構成する100の要素」作成ツール">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    document.write(
+      '<link rel="stylesheet" href="../static/css/style.css?' + new Date().getTime() + '">'
+    );
+  </script>
+</head>
+
+<body>
+  <!-- header -->
+
+  <!-- content -->
+  <main>
+    {%- block content%}{% endblock %}
+  </main>
+</body>
+
+</html>
