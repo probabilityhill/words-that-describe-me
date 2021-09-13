@@ -12,15 +12,15 @@ app.secret_key = 'ahahahaaaa'
 now = datetime.datetime.now()
 filename = now.strftime('%Y%m%d%H%M%S')
 
-def createWordcloud(cloud_data):
+def createWordcloud(bgc, cloud_data, cmap, font, height, width):
     cloud = WordCloud(
-        background_color='black',
-        colormap='Set3',
-        font_path='./static/font/YuGothB.ttc',
-        height=90,
+        background_color=bgc,
+        colormap=cmap,
+        font_path='./static/font/'+font,
+        height=height,
         prefer_horizontal=0.7,
         scale=50,
-        width=160
+        width=width
         ).fit_words(cloud_data)
 
     plt.axis('off')
@@ -51,15 +51,23 @@ def top():
 # postのときの処理
 @app.route("/result", methods=['POST'])
 def post():
-    cloud_data = request.form.get('cloud_data')
-    # radio = request.form.get('radio')
+    aspect_ratio = request.form.get('aspect_ratio').split(':')
+    width = int(aspect_ratio[0])
+    height = int(aspect_ratio[1])
+
+    bgc = request.form.get('bgc')
+    cmap = request.form.get('cmap')
+    font = request.form.get('font')
+
     wordlist = request.form.getlist('word')
     wordlist = [a for a in wordlist if a != '']
     freqlist = request.form.getlist('freq')
     freqlist = [a for a in freqlist if a != '']
-    freqlist = list(map(int, freqlist)) # str --> int
+    freqlist = list(map(float, freqlist)) # str --> float
     cloud_data = dict(zip(wordlist,freqlist))
-    createWordcloud(cloud_data)
+
+    createWordcloud(bgc, cloud_data, cmap, font, height, width)
+
     return render_template(
         'result.html',
         description = '',
