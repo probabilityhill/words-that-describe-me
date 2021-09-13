@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 :root {
-  --c-txt--1: #666;
-  --c-txt--2: #e1001e;
-  --c-bg--1: white;
-  --c-bg--2: gainsboro;
+  --c-txt--1: #fff;
+  --c-txt--2: #666;
+  --c-bg--1: #4fe7e7;
+  --c-bg--2: #fff;
 }
 
 html {
@@ -12,10 +12,12 @@ html {
 }
 
 body {
-  margin: 0;
+  background-color: var(--c-bg--1);
+  color: var(--c-txt--1);
   font-family: 'Noto Sans JP', "游ゴシック体", YuGothic,  "游ゴシック", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", "メイリオ", Meiryo, sans-serif;
   font-size: 1.4rem;
   font-weight: 100;
+  margin: 0;
 }
 /* タブレット */
 @media print, screen and (min-width: 520px) {
@@ -62,7 +64,7 @@ input:-webkit-autofill, input:focus:-webkit-autofill {
 
 /* common */
 .ttl--1 {
-  font-family: 'RocknRoll One', sans-serif;
+  font-family: 'Potta One', sans-serif;
   font-weight: inherit;
   font-size: 3rem;
   margin: 0;
