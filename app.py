@@ -13,22 +13,6 @@ now = datetime.datetime.now()
 filename = now.strftime('%Y%m%d%H%M%S')
 
 def createWordcloud(cloud_data):
-    """
-    cloud_data = {
-        '音楽':0.9,
-        '読書':0.1,
-        'サイケデリック':0.8,
-        'シューゲイザー':1.5,
-        'アンビエント':0.2,
-        'Tame Impara':0.5,
-        '焼肉':0.4,
-        'Metafive':0.3,
-        'The Flipper\'s guitar':0.2,
-        '游ゴシック':0.8,
-        'P-MODEL':0.08
-        }
-    """
-
     cloud = WordCloud(
         background_color='black',
         colormap='Set3',
@@ -58,7 +42,7 @@ def top():
     return render_template(
         'index.html',
         description='「私を構成する100の要素」作成ツールです。',
-        title='「私を構成する100の要素」作成ツール',
+        title='私を構成する100の要素｜作成ツール',
         url='https://beautyofthebrain.pythonanywhere.com/',
         tr = tr
         )
@@ -79,11 +63,10 @@ def post():
     return render_template(
         'result.html',
         description = '',
-        title = 'GENERATED |「私を構成する100の要素」作成ツール',
+        title = '私を構成する100の要素｜出力画像',
         url = 'https://beautyofthebrain.pythonanywhere.com/result',
         filename=filename
         )
 
-# 「.py」ファイルの実行時の動作
 if __name__ == "__main__":
     app.run()
