@@ -61,6 +61,13 @@ button {
   background-color: var(--c-txt--2);
 }
 
+input {
+  border: none;
+}
+select {
+  border: none;
+}
+
 input:focus-visible {
   outline: none;
 }
