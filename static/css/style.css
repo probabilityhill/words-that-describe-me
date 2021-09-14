@@ -14,7 +14,7 @@ html {
 body {
   background-color: var(--c-bg--1);
   color: var(--c-txt--1);
-  font-family: 'Noto Sans JP', "游ゴシック体", YuGothic,  "游ゴシック", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", "メイリオ", Meiryo, sans-serif;
+  font-family: 'Noto Sans JP', "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", "メイリオ", Meiryo, sans-serif;
   font-size: 1.4rem;
   font-weight: 100;
   margin: 0;
@@ -63,9 +63,11 @@ button {
 
 input {
   border: none;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 select {
   border: none;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 input:focus-visible {
