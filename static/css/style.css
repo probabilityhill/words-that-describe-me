@@ -42,10 +42,6 @@ a {
   text-decoration: underline;
 }
 
-li {
-  list-style: none;
-}
-
 img {
   width: 100%;
 }
@@ -69,16 +65,18 @@ input {
   border: none;
   color: var(--c-txt--2);
   font-family: 'Noto Sans JP', sans-serif;
+  height: 2.5rem;
 }
 select {
   background-color: var(--c-bg--2);
   border: none;
   color: var(--c-txt--2);
   font-family: 'Noto Sans JP', sans-serif;
+  height: 3rem;
 }
 
 :focus-visible {
-    outline: .8rem solid var(--c-bg--1--light--1);
+    outline: .5rem solid var(--c-bg--1--light--1);
 }
 
 :-webkit-autofill, :focus:-webkit-autofill {
@@ -113,10 +111,35 @@ select {
 }
 
 /* index.html */
-td {
-  padding: 1rem 1.5rem;
+.form {
+  padding: 5vw;
+}
+.option__item {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  margin: 0 2vw 2rem 2vw;
+}
+.option__item span {
+  font-size: 1.6rem;
+  line-height: 3rem;
 }
 
+.form__table {
+  margin-top: 10vw;
+}
+.form__table th {
+  font-size: 1.6rem;
+  font-weight: inherit;
+}
+.form__table td {
+  padding: 2vw;
+}
+.form__table td:first-child input {
+  width: 57vw;
+}
+.form__table td:last-child input {
+  width: 25vw;
+}
 /* result.html */
 .result {
   margin: 3vw;
