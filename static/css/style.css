@@ -65,11 +65,13 @@ button {
 
 /* form関連のデザイン */
 input {
+  background-color: var(--c-bg--2);
   border: none;
   color: var(--c-txt--2);
   font-family: 'Noto Sans JP', sans-serif;
 }
 select {
+  background-color: var(--c-bg--2);
   border: none;
   color: var(--c-txt--2);
   font-family: 'Noto Sans JP', sans-serif;
