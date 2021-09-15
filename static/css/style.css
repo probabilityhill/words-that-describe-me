@@ -3,10 +3,11 @@
 :root {
   --c-txt--1: #fff;
   --c-txt--2: #666;
-  --c-bg--1: #4fe7e7;
-  --c-bg--1--light--1: #aff9f9;
-  --c-bg--1--light--2: #e6fefe;
-  --c-bg--2: #fff;
+  --c-primary: #4fe7e7;
+  --c-primary--light--1: #aff9f9;
+  --c-primary--light--2: #e6fefe;
+  --c-primary--dark--1: #3cb0b0;
+  --c-white: #fff;
 }
 
 html {
@@ -14,7 +15,7 @@ html {
 }
 
 body {
-  background-color: var(--c-bg--1);
+  background-color: var(--c-primary);
   color: var(--c-txt--1);
   font-family: 'Noto Sans JP', "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", "メイリオ", Meiryo, sans-serif;
   font-size: 1.4rem;
@@ -51,36 +52,50 @@ button {
 }
 
 ::-moz-selection {
-  color: var(--c-bg--1);
+  color: var(--c-primary);
   background-color: var(--c-txt--2);
 }
 ::selection {
-  color: var(--c-bg--1);
+  color: var(--c-primary);
   background-color: var(--c-txt--2);
 }
 
 /* form関連のデザイン */
 input {
-  background-color: var(--c-bg--2);
+  background-color: var(--c-white);
   border: none;
   color: var(--c-txt--2);
   font-family: 'Noto Sans JP', sans-serif;
   height: 2.5rem;
 }
 select {
-  background-color: var(--c-bg--2);
+  background-color: var(--c-white);
   border: none;
   color: var(--c-txt--2);
   font-family: 'Noto Sans JP', sans-serif;
   height: 3rem;
 }
 
+
+::-moz-placeholder {
+  color: var(--c-primary--dark--1);
+}
+
+:-ms-input-placeholder {
+  color: var(--c-primary--dark--1);
+}
+
+::placeholder {
+  color: var(--c-primary--dark--1);
+  font-family: 'Potta one', sans-serif;
+}
+
 :focus-visible {
-    outline: .5rem solid var(--c-bg--1--light--1);
+    outline: .5rem solid var(--c-primary--light--1);
 }
 
 :-webkit-autofill, :focus:-webkit-autofill {
-   -webkit-box-shadow: 0 0 0 100px var(--c-bg--1--light--2) inset;
+   -webkit-box-shadow: 0 0 0 100px var(--c-primary--light--2) inset;
    -webkit-text-fill-color: var(--c-txt--2);
 }
 
@@ -120,14 +135,16 @@ select {
   margin: 0 2vw 2rem 2vw;
 }
 .option__item span {
+  font-family: 'Potta one', sans-serif;
   font-size: 1.6rem;
   line-height: 3rem;
 }
 
 .form__table {
-  margin-top: 10vw;
+  margin-top: 15vw;
 }
 .form__table th {
+  font-family: 'Potta one', sans-serif;
   font-size: 1.6rem;
   font-weight: inherit;
 }
@@ -143,4 +160,85 @@ select {
 /* result.html */
 .result {
   margin: 3vw;
+}
+
+#states3 {
+  width: 100%;
+}
+
+.select2-dropdown {
+  border: none;
+}
+/* テキストボックスの削除 */
+.select2-search--dropdown {
+  display: none;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  display: none;
+}
+
+/* hover時のデザイン */
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: var(--c-primary--dark--1);
+  color: var(--c-white);
+}
+
+/* 選択済みのoptionのデザイン */
+.select2-container--default .select2-results__option--selected {
+    background-color: var(--c-primary--light--2);
+}
+
+/* 表示されているoptionのデザイン */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: var(--c-txt--2);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.4rem;
+}
+
+/* selectのデザイン */
+.select2-container--default .select2-selection--single {
+    background-color: var(--c-white);
+    border: 0;
+    border-radius: 0;
+}
+
+/* optionのデザイン */
+.select2-results__option {
+  background-color: var(--c-white);
+  color: var(--c-txt--2);
+  font-size: 1.4rem;
+}
+
+/* 下矢印を消す */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  /*display: none;*/
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: var(--c-txt--2);
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  height: 7px;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -3px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 7px;
+}
+/* クリックしたときの下矢印 */
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: var(--c-txt--2);
+  border-width: 0 0 2px 2px;
+}
+
+/* スクロールバーを消す */
+.select2-container--default .select2-results>.select2-results__options {
+  /* IE, Edge 対応 */
+  -ms-overflow-style: none;
+  /* Firefox 対応 */
+  scrollbar-width: none;
+}
+.select2-container--default .select2-results>.select2-results__options::-webkit-scrollbar {
+  display:none;
 }

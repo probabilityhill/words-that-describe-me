@@ -36,9 +36,9 @@ def createWordcloud(bgc, cloud_data, cmap, font, height, width):
 
 @app.route("/")
 def top():
-    tr = Markup('<tr><th>要素</th><th>頻度</th></tr>')
+    tr = Markup('<tr><th>要素</th><th>大きさ</th></tr>')
     for i in range(100):
-        tr += Markup('<tr><td><input type="text" name="word"></td><td><input type="text" inputmode="decimal" name="freq"></td></tr>')
+        tr += Markup('<tr><td><input type="text" name="word" placeholder="'+str(i+1)+'"></td><td><input type="text" inputmode="decimal" name="freq"></td></tr>')
     return render_template(
         'index.html',
         description='「私を構成する100の要素」作成ツールです。',
