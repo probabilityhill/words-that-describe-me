@@ -44,7 +44,7 @@ def top():
         'index.html',
         description='「私を構成する100の要素」作成ツールです。',
         title='私を構成する100の要素｜作成ツール',
-        url='https://beautyofthebrain.pythonanywhere.com/',
+        url='https://words-that-describe-me.herokuapp.com/',
         tr = tr
         )
 
