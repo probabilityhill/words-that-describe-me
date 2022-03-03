@@ -2,7 +2,6 @@
 
 {%- block content %}
 
-<h1 class="ttl--1"><a href="/">私を構成する100の要素</a></h1>
 <form action="/result" method="POST" class="form">
     <div class="option">
       <div class="option__item">
@@ -106,32 +105,47 @@
       </div>
       <div class="option__item">
         <span>縦横比</span>
-        <div class="input-field">
-          <select name="aspect_ratio" id="states3">
-            <option value="130:130">正方形 - 1:1</option>
-            <option value="170:85">ヨコ長 - 2:1</option>
-            <option value="180:60">ヨコ長 - 3:1</option>
-            <option value="150:100">ヨコ長 - 3:2</option>
-            <option value="140:105">ヨコ長 - 4:3</option>
-            <option value="160:90" selected>ヨコ長 - 16:9</option>
-            <option value="162:100">ヨコ長 - 1.618:1（黄金比）</option>
-            <option value="140:100">ヨコ長 - 1.414:1（白銀比）</option>
-            <option value="173:100">ヨコ長 - 1.732:1（白金比）</option>
-            <option value="198:60">ヨコ長 - 3.303:1（青銅比）</option>
-            <option value="85:170">タテ長 - 1:2</option>
-            <option value="60:180">タテ長 - 1:3</option>
-            <option value="100:150">タテ長 - 2:3</option>
-            <option value="105:140">タテ長 - 3:4</option>
-            <option value="90:160">タテ長 - 9:16</option>
-            <option value="100:162">タテ長 - 1:1.618（黄金比）</option>
-            <option value="100:140">タテ長 - 1:1.414（白銀比）</option>
-            <option value="100:173">タテ長 - 1:1.732（白金比）</option>
-            <option value="60:198">タテ長 - 1:3.303（青銅比）</option>
-          </select>
-
-        </div>
+        <select name="aspect_ratio">
+          <option value="130:130">正方形 - 1:1</option>
+          <option value="170:85">ヨコ長 - 2:1</option>
+          <option value="180:60">ヨコ長 - 3:1</option>
+          <option value="150:100">ヨコ長 - 3:2</option>
+          <option value="140:105">ヨコ長 - 4:3</option>
+          <option value="160:90" selected>ヨコ長 - 16:9</option>
+          <option value="162:100">ヨコ長 - 1.618:1（黄金比）</option>
+          <option value="140:100">ヨコ長 - 1.414:1（白銀比）</option>
+          <option value="173:100">ヨコ長 - 1.732:1（白金比）</option>
+          <option value="198:60">ヨコ長 - 3.303:1（青銅比）</option>
+          <option value="85:170">タテ長 - 1:2</option>
+          <option value="60:180">タテ長 - 1:3</option>
+          <option value="100:150">タテ長 - 2:3</option>
+          <option value="105:140">タテ長 - 3:4</option>
+          <option value="90:160">タテ長 - 9:16</option>
+          <option value="100:162">タテ長 - 1:1.618（黄金比）</option>
+          <option value="100:140">タテ長 - 1:1.414（白銀比）</option>
+          <option value="100:173">タテ長 - 1:1.732（白金比）</option>
+          <option value="60:198">タテ長 - 1:3.303（青銅比）</option>
+        </select>
       </div>
-
+    <div class="form__desc">
+      <details>
+        <summary>配色の見本</summary>
+        <figure>
+          <img src="../static/img/sphx_glr_colormaps_001.png" alt="Perceptually Uniform Sequential colormaps">
+          <img src="../static/img/sphx_glr_colormaps_002.png" alt="Sequential colormaps">
+          <img src="../static/img/sphx_glr_colormaps_003.png" alt="Sequential (2) colormaps">
+          <img src="../static/img/sphx_glr_colormaps_004.png" alt="Diverging colormaps">
+          <img src="../static/img/sphx_glr_colormaps_005.png" alt="Cyclic colormaps">
+          <img src="../static/img/sphx_glr_colormaps_006.png" alt="Qualitative colormaps">
+          <img src="../static/img/sphx_glr_colormaps_007.png" alt="Miscellaneous colormaps">
+          <figcaption><small>出典：<cite><a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">Choosing Colormaps in Matplotlib</a></cite></small></figcaption>
+        </figure>
+      </details>
+      <details>
+        <summary>フォントの見本</summary>
+        <img src="../static/img/sphx_glr_colormaps_001.png" alt="Perceptually Uniform Sequential colormaps">
+      </details>
+    </div>
     </div>
     <table class="form__table">
         {{ tr | safe }}
