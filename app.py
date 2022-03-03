@@ -1,13 +1,16 @@
+import os, datetime
+from dotenv import load_dotenv
+from flask import Flask, render_template, request, Markup
 import matplotlib as mpl
-mpl.rcParams['figure.dpi']= 300  # dpi
-
 from matplotlib import pyplot as plt
 from wordcloud import WordCloud
-import datetime
-from flask import Flask, render_template, request, Markup
 
+load_dotenv() # .envを読み込む
+SK = os.getenv("SECRET_KEY") # 環境変数を取得
 app = Flask(__name__)
-app.secret_key = 'ahahahaaaa'
+app.secret_key = SK
+
+mpl.rcParams['figure.dpi']= 300  # dpi
 
 now = datetime.datetime.now()
 filename = now.strftime('%Y%m%d%H%M%S')
@@ -32,8 +35,6 @@ def createWordcloud(bgc, cloud_data, cmap, font, height, width):
         pad_inches=0
         )
 
-
-
 @app.route("/")
 def top():
     tr = Markup('<tr><th>要素</th><th>大きさ</th></tr>')
@@ -46,7 +47,6 @@ def top():
         url='https://beautyofthebrain.pythonanywhere.com/',
         tr = tr
         )
-
 
 # postのときの処理
 @app.route("/result", methods=['POST'])
