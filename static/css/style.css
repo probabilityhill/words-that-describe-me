@@ -53,11 +53,11 @@ button {
 
 ::-moz-selection {
   color: var(--c-primary);
-  background-color: var(--c-txt--2);
+  background-color: var(--c-white);
 }
 ::selection {
   color: var(--c-primary);
-  background-color: var(--c-txt--2);
+  background-color: var(--c-white);
 }
 
 /* form関連のデザイン */
@@ -172,6 +172,19 @@ select {
   }
   .form__table td:last-child input {
     width: 20vw;
+}
+
+.submit_btn {
+  -webkit-appearance: none;
+  background-color: var(--c-primary);
+  border: 2px solid var(--c-txt--1);
+  color: var(--c-white);
+  display: block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  height: 3rem;
+  margin: 1rem auto;
+  width: 5rem;
 }
 /* result.html */
 .result {
