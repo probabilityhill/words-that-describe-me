@@ -22,14 +22,9 @@ body {
   font-weight: 100;
   margin: 0;
 }
-/* タブレット */
-@media print, screen and (min-width: 520px) {
-  body {
-    font-size: 1.8rem;
-  }
-}
-/* パソコン */
-@media print, screen and (min-width: 1025px) {
+
+/* パソコン、タブレット */
+@media print, screen and (min-width: 1024px) {
   body {
     font-size: 1.6rem;
   }
@@ -114,12 +109,13 @@ select {
   text-align: center;
 }
 .ttl--2 {
+  font-family: 'Potta One', sans-serif;
+  font-size: 1.6rem;
   font-weight: inherit;
-  font-size: inherit;
-  margin: 1rem 0;
+  margin: .5rem 0;
 }
 
-@media print, screen and (orientation: landscape), (min-width: 520px) {
+@media print, screen and (min-width: 1024px) {
   .ttl--1 {
     font-size: 5rem;
   }
@@ -127,17 +123,18 @@ select {
 
 /* index.html */
 .form {
-  padding: 5vw;
+  padding: 0 2rem 2rem;
 }
-@media print, screen and (orientation: landscape), (min-width: 520px) {
+@media print, screen and (min-width: 1024px) {
   .form {
-    padding: 5vw 10vw;
+    padding: 0 30rem 30rem;
   }
 }
+
 .option__item {
   display: grid;
   grid-template-columns: 2fr 5fr;
-  margin: 0 2vw 2rem 2vw;
+  padding: 1rem 0;
 }
 .option__item span {
   font-family: 'Potta one', sans-serif;
@@ -146,32 +143,60 @@ select {
 }
 
 .form__desc {
-  padding: 2vw;
+  padding: 1rem .5rem;
+}
+.form__desc__details {
+  margin: 1rem 0;
+}
+.form__desc__details__figure {
+  margin: 0;
+}
+.form__use {
+  margin: 0 0 3rem;
+}
+.form__use__list {
+  margin: 0;
+}
+@media print, screen and (min-width: 1024px) {
+  .form__use {
+    margin: 2rem 0 5rem;
+  }
 }
 
 .form__table {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 .form__table th {
   font-family: 'Potta one', sans-serif;
   font-size: 1.6rem;
   font-weight: inherit;
 }
-.form__table td {
-  padding: 2vw;
+.form__table td:first-child {
+  padding: .5rem .5rem .5rem 0;
+}
+.form__table td:last-child {
+  padding: .5rem 0 .5rem .5rem;
 }
 .form__table td:first-child input {
-  width: 57vw;
+  width: calc((100vw - 2rem * 2 - 0.5rem * 2) * 0.7);
 }
 .form__table td:last-child input {
-  width: 25vw;
+  width: calc((100vw - 2rem * 2 - 0.5rem * 2) * 0.3);
 }
-@media print, screen and (orientation: landscape), (min-width: 520px) {
+@media print, screen and (min-width: 1024px) {
+  .form__table td:first-child {
+    padding: 1rem 1rem 1rem 0;
+  }
+  .form__table td:last-child {
+    padding: 1rem 0 1rem 1rem;
+  }
+
   .form__table td:first-child input {
-    width: 50vw;
+    width: calc((100vw - 30rem * 2 - 1rem * 2) * 0.7);
   }
   .form__table td:last-child input {
-    width: 20vw;
+    width: calc((100vw - 30rem * 2 - 1rem * 2) * 0.3);
+  }
 }
 
 .submit_btn {
@@ -181,11 +206,20 @@ select {
   color: var(--c-white);
   display: block;
   font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.4rem;
   font-weight: 500;
   height: 3rem;
-  margin: 1rem auto;
+  margin: 2rem auto;
   width: 5rem;
 }
+@media print, screen and (min-width: 1024px) {
+  .submit_btn {
+    font-size: 1.6rem;
+    height: 4rem;
+    width: 8rem;
+  }
+}
+
 /* result.html */
 .result {
   margin: 3vw;
