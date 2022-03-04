@@ -1,4 +1,4 @@
-import os, datetime
+import os, datetime, random
 from dotenv import load_dotenv
 from flask import Flask, render_template, request, Markup
 import matplotlib as mpl
@@ -13,7 +13,7 @@ app.secret_key = SK
 mpl.rcParams['figure.dpi']= 300  # dpi
 
 now = datetime.datetime.now()
-filename = now.strftime('%Y%m%d%H%M%S')
+filename = now.strftime('%Y%m%d%H%M%S')+str(random.randint(10000, 100000))
 
 def createWordcloud(bgc, cloud_data, cmap, font, height, width):
     cloud = WordCloud(
