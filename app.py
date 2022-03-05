@@ -20,10 +20,13 @@ def createWordcloud(bgc, cloud_data, cmap, font, height, width):
         background_color=bgc,
         colormap=cmap,
         font_path='./static/font/'+font,
-        height=height,
+        height=height*10,
+        include_numbers=True,
+        max_words=100,
         prefer_horizontal=0.7,
-        scale=50,
-        width=width
+        relative_scaling=1,
+        scale=1,
+        width=width*10
         ).fit_words(cloud_data)
 
     plt.axis('off')
