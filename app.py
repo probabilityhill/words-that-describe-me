@@ -79,5 +79,9 @@ def post():
         filename=filename
         )
 
+@app.route("/sitemap.xml")
+def sitemap():
+    return app.send_static_file("sitemap.xml")
+
 if __name__ == "__main__":
     app.run()
