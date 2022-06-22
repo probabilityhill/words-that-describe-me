@@ -75,7 +75,7 @@ def post():
         'result.html',
         description = '',
         title = '私を構成する100の要素｜出力画像',
-        url = 'https://beautyofthebrain.pythonanywhere.com/result',
+        url = 'https://words-that-describe-me.herokuapp.com/result',
         filename=filename
         )
 
